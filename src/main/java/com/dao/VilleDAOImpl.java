@@ -12,18 +12,18 @@ import com.config.JDBConfiguration;
 import com.dto.Ville;
 
 @Repository
-public class VilleDAOImpl implements VilleDAO{
+public class VilleDAOImpl implements VilleDAO {
 
 	@Override
 	public ArrayList<Ville> getInfoVille() {
 		ArrayList<Ville> listVille = new ArrayList<Ville>();
-		
+
 		try {
 			Connection myConnection = JDBConfiguration.connexion();
 			String requestGETville = "SELECT * FROM Ville_france;";
 			Statement statement = myConnection.createStatement();
 			ResultSet resultSet = statement.executeQuery(requestGETville);
-			while(resultSet.next()) {
+			while (resultSet.next()) {
 				Ville newVille = new Ville();
 				newVille.setCodeCommune(resultSet.getString(1));
 				newVille.setNomCommune(resultSet.getString(2));
@@ -35,19 +35,37 @@ public class VilleDAOImpl implements VilleDAO{
 				listVille.add(newVille);
 			}
 			myConnection.close();
-		}catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 		return listVille;
 	}
 
 	@Override
 	public ArrayList<Ville> getInfoVille(String filtre) {
 		ArrayList<Ville> listVille = new ArrayList<Ville>();
-		
 		return null;
 	}
 
-	
+	@Override
+	public void createNewVille(Ville myNewVille) {
+		try {
+			Connection myConnection = JDBConfiguration.connexion();
+			String requestPOSTville = "INSERT INTO Ville_france VALUES (";
+			requestPOSTville += "'" + myNewVille.getCodeCommune();
+			requestPOSTville += "', '" + myNewVille.getNomCommune();
+			requestPOSTville += "', '" + myNewVille.getCodePostal();
+			requestPOSTville += "', '" + myNewVille.getLibelleAcheminement();
+			requestPOSTville += "', '" + myNewVille.getLigne();
+			requestPOSTville += "', '" + myNewVille.getLatitude();
+			requestPOSTville += "', '" + myNewVille.getLongitude();
+			requestPOSTville += "' )";
+			Statement statement = myConnection.createStatement();
+			statement.executeUpdate(requestPOSTville);
+			myConnection.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

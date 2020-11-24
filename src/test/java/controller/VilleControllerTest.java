@@ -15,8 +15,7 @@ import com.controller.VilleController;
 
 public class VilleControllerTest {
 
-	/**
-	 * 
+
 	@Test
 	public void testGet1() {
 		
@@ -38,7 +37,6 @@ public class VilleControllerTest {
 		
 		VilleController myVC = null;
 	}
-	 */
 	
 	@Test
 	public void testGet2() {

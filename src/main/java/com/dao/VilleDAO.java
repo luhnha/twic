@@ -9,6 +9,8 @@ public interface VilleDAO {
 	
 	public ArrayList<Ville> getInfoVille(String filtre);
 
+	public void createNewVille(Ville myNewVille);
+
 	
 	
 }

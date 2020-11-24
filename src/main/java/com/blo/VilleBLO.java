@@ -6,6 +6,8 @@ import com.dto.Ville;
 
 public interface VilleBLO {
 	public ArrayList<Ville> getInfoVille();
+
+	public void methodPost(Ville myNewVille);
 	
 
 }
