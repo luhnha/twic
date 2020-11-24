@@ -34,6 +34,22 @@ public class Ville {
 		this.libelleAcheminement = libelleAcheminement;
 	}
 
+	public String getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
 	public String getLigne() {
 		return ligne;
 	}
@@ -43,12 +59,16 @@ public class Ville {
 	}
 
 	public String codeCommune;
-	
+
 	public String nomCommune;
-	
+
 	public String codePostal;
-	
+
 	public String libelleAcheminement;
-	
+
 	public String ligne;
+
+	public String latitude;
+
+	public String longitude;
 }
