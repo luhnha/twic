@@ -42,7 +42,7 @@ public class VilleControllerTest {
 	public void testGet2() {
 		JDBConfiguration myConf =  new JDBConfiguration();
 		VilleController villC = new VilleController();
-		System.out.println(villC.appelGet().get(0).getNomCommune());
+		//System.out.println(villC.appelGet().get(0).getNomCommune());
 	}
 
 }

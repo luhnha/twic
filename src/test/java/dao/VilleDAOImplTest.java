@@ -14,7 +14,7 @@ public class VilleDAOImplTest {
 	@Test
 	public void testGET() {
 		VilleDAOImpl villeDAOImp = new VilleDAOImpl();
-		ArrayList<Ville> myArray = villeDAOImp.getInfoVille();
+		ArrayList<Ville> myArray = villeDAOImp.getInfoVille(null);
 		Ville ville1 = myArray.get(0);
 		System.out.println(ville1.getNomCommune());
 		assertEquals("01001",ville1.getCodeCommune());
@@ -29,7 +29,7 @@ public class VilleDAOImplTest {
 	@Test
 	public void testPOST() {
 		VilleDAOImpl villeDAOImp = new VilleDAOImpl();
-		ArrayList<Ville> myArray = villeDAOImp.getInfoVille();
+		ArrayList<Ville> myArray = villeDAOImp.getInfoVille(null);
 		Ville ville1 = myArray.get(0);
 		System.out.println(ville1.getNomCommune());
 		assertEquals("01001",ville1.getCodeCommune());
